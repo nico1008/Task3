@@ -79,7 +79,7 @@ public class Task3 {
                     maxOdd += j;
                 }
             }
-            return Math.max(maxEven,maxOdd)-Math.min(maxEven,maxOdd);
+            return Math.abs(maxEven-maxOdd);
         }
         public static String reverseCase(String rev){
             char[] revChar=rev.toCharArray();
@@ -107,12 +107,9 @@ public class Task3 {
         }
         public static boolean doesBrickFit(int a,int b ,int c,int d,int e){
             int area =e*d;
-            if (a*b==area||a*c==area||b*c==area){
-                return true;
-            }
-            else {
-                return false;
-            }
+            
+                return (a*b<=area||a*c<=area||b*c<=area);
+           
         }
         public static double totalDistance(double capacity, double usage, int people, boolean fan){
             int cooler=0;
@@ -135,13 +132,8 @@ public class Task3 {
                 sum+=num %10;
                 num=num/10;
             }
-            if (numH%2==0&&sum%2==0 ||numH%2!=0&&sum%2!=0 ){
-                return true;
+         
+                return numH%2==0&&sum%2==0 ||numH%2!=0&&sum%2!=0; 
             }
-            else{
-                return false;
-            }
-
-        }
 
 }
