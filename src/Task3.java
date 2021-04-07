@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-class City{
+public class City{
     private String city;
     private int population;
 
@@ -105,10 +105,9 @@ public class Task3 {
             }
             return stroka.concat(" " +len+"000");
         }
-        public static boolean doesBrickFit(int a,int b ,int c,int d,int e){
-            int area =e*d;
+        public static boolean doesBrickFit(int a,int b ,int c,int width,int hight){
             
-                return (a*b<=area||a*c<=area||b*c<=area);
+                return a<=width && b<=hight || b<=width && a<=hight || b<=width && c <=hight || c<=width && b<=hight || a<=width && c<=hight || c<=width && a<=hight;
            
         }
         public static double totalDistance(double capacity, double usage, int people, boolean fan){
@@ -132,8 +131,7 @@ public class Task3 {
                 sum+=num %10;
                 num=num/10;
             }
-         
-                return numH%2==0&&sum%2==0 ||numH%2!=0&&sum%2!=0; 
+                return (numH-sum)%2==0;
             }
 
 }
