@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class City{
+ class City{
     private String city;
     private int population;
 
